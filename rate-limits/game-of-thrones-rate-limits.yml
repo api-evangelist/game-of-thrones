@@ -1,0 +1,30 @@
+name: An API of Ice and Fire Rate Limits
+description: Rate limiting details for An API of Ice and Fire (anapioficeandfire.com)
+url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki/Rate-limiting
+rateLimits:
+  - plan: Free
+    requests: 20000
+    period: day
+    scope: per IP address
+    enforcement: >-
+      Requests exceeding the daily limit receive a 403 Forbidden HTTP response
+      for the remainder of the 24-hour period.
+notes: >-
+  The API documentation recommends implementing proper caching strategies to
+  avoid hitting the rate limit. With appropriate caching there should be no
+  reason for typical use cases to exceed 20,000 requests per day. No
+  authentication is required, and limits apply per originating IP address.
+pagination:
+  defaultPageSize: 10
+  maxPageSize: 50
+  parameters:
+    - name: page
+      description: Page number (1-based)
+    - name: pageSize
+      description: Number of results per page (max 50)
+  linkHeader: true
+  linkRelations:
+    - next
+    - prev
+    - first
+    - last

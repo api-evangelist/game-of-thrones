@@ -1,0 +1,40 @@
+name: An API of Ice and Fire FinOps
+description: >-
+  Financial operations guidance for An API of Ice and Fire
+  (anapioficeandfire.com). This is a free, open API with no cost to consumers.
+url: https://anapioficeandfire.com/
+cost:
+  consumer:
+    total: 0
+    currency: USD
+    notes: >-
+      An API of Ice and Fire is entirely free to use. There are no paid tiers,
+      subscription fees, or pay-per-use charges. No credit card or account
+      registration is required.
+  producer:
+    notes: >-
+      The API is an open-source project maintained by Joakim Skoog. Operating
+      costs are borne by the maintainer. Contributions via the GitHub repository
+      are welcome.
+optimization:
+  - strategy: Client-side caching
+    description: >-
+      Cache API responses on the client side to reduce repeated requests and
+      avoid approaching the 20,000 requests/day rate limit. The API itself
+      also supports caching via standard HTTP cache headers.
+  - strategy: Pagination
+    description: >-
+      Use pageSize parameter (max 50) to retrieve larger result sets per
+      request, reducing total API call count.
+  - strategy: Targeted filtering
+    description: >-
+      Use available query parameters (name, gender, culture, region, etc.) to
+      filter results server-side rather than fetching all records and filtering
+      client-side.
+risks:
+  - label: No SLA
+    description: As a free community API, there is no formal service level agreement.
+  - label: No uptime guarantee
+    description: No official status page or uptime commitment exists.
+  - label: Single maintainer
+    description: The project is maintained by a single developer; future availability is not guaranteed.

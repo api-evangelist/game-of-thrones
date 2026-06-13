@@ -1,0 +1,28 @@
+name: An API of Ice and Fire Plans and Pricing
+description: Pricing plans for An API of Ice and Fire (anapioficeandfire.com)
+url: https://anapioficeandfire.com/
+plans:
+  - name: Free
+    description: >-
+      An API of Ice and Fire is completely free and open to use with no
+      authentication required. All endpoints are publicly accessible without
+      registration or API keys.
+    price: 0
+    currency: USD
+    unit: month
+    rateLimits:
+      - requests: 20000
+        period: day
+        scope: per IP address
+    features:
+      - label: No authentication required
+      - label: Access to Books endpoint
+      - label: Access to Characters endpoint
+      - label: Access to Houses endpoint
+      - label: Pagination support (up to 50 results per page)
+      - label: Filtering on all resource types
+      - label: GET requests only
+notes: >-
+  The API is free for all users. Exceeding the daily rate limit (20,000
+  requests/day per IP) results in a 403 Forbidden response for the remainder
+  of the 24-hour window. Caching is recommended to avoid hitting the limit.

@@ -1,0 +1,70 @@
+aid: game-of-thrones
+name: An API of Ice and Fire
+description: >-
+  An API of Ice and Fire is a free, open REST API providing comprehensive
+  Game of Thrones and A Song of Ice and Fire data including books, characters,
+  and houses from George R.R. Martin's universe. No authentication is required.
+  The API offers structured, quantified data about the HBO series and book
+  series covering all named characters, their allegiances, relationships,
+  book appearances, TV season appearances, and details on every noble house
+  and published book in the series.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/game-of-thrones/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Game of Thrones
+  - ASOIAF
+  - A Song of Ice and Fire
+  - Books
+  - Characters
+  - Houses
+  - Fantasy
+  - Entertainment
+  - Open API
+  - Free API
+apis:
+  - aid: game-of-thrones:an-api-of-ice-and-fire
+    name: An API of Ice and Fire
+    description: >-
+      Free REST API providing structured data from the A Song of Ice and Fire
+      book series and HBO's Game of Thrones. Endpoints cover Books, Characters,
+      and Houses with rich filtering and hypermedia pagination. No API key or
+      authentication required.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://anapioficeandfire.com/
+    baseURL: https://www.anapioficeandfire.com/api
+    tags:
+      - Game of Thrones
+      - ASOIAF
+      - Books
+      - Characters
+      - Houses
+      - Fantasy
+    properties:
+      - type: Documentation
+        url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
+      - type: OpenAPI
+        url: https://www.anapioficeandfire.com/api
+      - type: GitHubRepository
+        url: https://github.com/joakimskoog/AnApiOfIceAndFire
+    contact:
+      - FN: Joakim Skoog
+        url: https://github.com/joakimskoog
+common:
+  - type: Website
+    url: https://anapioficeandfire.com/
+  - type: Documentation
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
+  - type: GitHubOrg
+    url: https://github.com/joakimskoog
+  - type: Plans
+    url: plans/game-of-thrones-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/game-of-thrones-rate-limits.yml
+  - type: FinOps
+    url: finops/game-of-thrones-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
