@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/game-of-thrones/main/json-schema/book.json",
+  "title": "Book",
+  "description": "A book published in the A Song of Ice and Fire series.",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "The canonical URL of this book resource."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the book.",
+      "examples": ["A Game of Thrones"]
+    },
+    "isbn": {
+      "type": "string",
+      "description": "ISBN-13 of the book.",
+      "pattern": "^978-[0-9-]+$",
+      "examples": ["978-0553103540"]
+    },
+    "authors": {
+      "type": "array",
+      "description": "List of authors who wrote this book.",
+      "items": {
+        "type": "string"
+      },
+      "examples": [["George R. R. Martin"]]
+    },
+    "numberOfPages": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total number of pages in the book.",
+      "examples": [694]
+    },
+    "publisher": {
+      "type": "string",
+      "description": "Publisher of the book.",
+      "examples": ["Bantam Books"]
+    },
+    "country": {
+      "type": "string",
+      "description": "Country of origin for the original publication.",
+      "examples": ["United States"]
+    },
+    "mediaType": {
+      "type": "string",
+      "description": "Media type of the book.",
+      "examples": ["Hardcover", "Paperback"]
+    },
+    "released": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Release date and time of the book (ISO 8601).",
+      "examples": ["1996-08-01T00:00:00"]
+    },
+    "characters": {
+      "type": "array",
+      "description": "URLs of characters who appear in this book.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "povCharacters": {
+      "type": "array",
+      "description": "URLs of characters with point-of-view chapters in this book.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  },
+  "required": ["url", "name", "isbn", "authors", "numberOfPages", "publisher", "country", "mediaType", "released", "characters", "povCharacters"]
+}

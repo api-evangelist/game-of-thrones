@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/game-of-thrones/main/json-schema/character.json",
+  "title": "Character",
+  "description": "A named character from the A Song of Ice and Fire universe.",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "The canonical URL of this character resource."
+    },
+    "name": {
+      "type": "string",
+      "description": "The character's name. May be empty for unnamed characters.",
+      "examples": ["Jon Snow"]
+    },
+    "gender": {
+      "type": "string",
+      "description": "The character's gender.",
+      "examples": ["Male", "Female"]
+    },
+    "culture": {
+      "type": "string",
+      "description": "The culture the character belongs to.",
+      "examples": ["Northmen", "Valyrian"]
+    },
+    "born": {
+      "type": "string",
+      "description": "Text description of when and where the character was born.",
+      "examples": ["In 283 AC"]
+    },
+    "died": {
+      "type": "string",
+      "description": "Text description of when and where the character died. Empty if alive or unknown."
+    },
+    "titles": {
+      "type": "array",
+      "description": "Titles held by the character.",
+      "items": {
+        "type": "string"
+      },
+      "examples": [["Lord Commander of the Night's Watch"]]
+    },
+    "aliases": {
+      "type": "array",
+      "description": "Known aliases for the character.",
+      "items": {
+        "type": "string"
+      },
+      "examples": [["Lord Snow", "The Bastard of Winterfell"]]
+    },
+    "father": {
+      "type": "string",
+      "description": "URL of the character's father resource, or empty string if unknown."
+    },
+    "mother": {
+      "type": "string",
+      "description": "URL of the character's mother resource, or empty string if unknown."
+    },
+    "spouse": {
+      "type": "string",
+      "description": "URL of the character's spouse resource, or empty string if unknown."
+    },
+    "allegiances": {
+      "type": "array",
+      "description": "URLs of houses the character is sworn to.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "books": {
+      "type": "array",
+      "description": "URLs of books the character appears in (non-POV).",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "povBooks": {
+      "type": "array",
+      "description": "URLs of books where this character has POV chapters.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "tvSeries": {
+      "type": "array",
+      "description": "TV seasons the character appears in.",
+      "items": {
+        "type": "string"
+      },
+      "examples": [["Season 1", "Season 2", "Season 3"]]
+    },
+    "playedBy": {
+      "type": "array",
+      "description": "Actors who played this character in the TV series.",
+      "items": {
+        "type": "string"
+      },
+      "examples": [["Kit Harington"]]
+    }
+  },
+  "required": ["url", "name", "gender", "culture", "born", "died", "titles", "aliases", "father", "mother", "spouse", "allegiances", "books", "povBooks", "tvSeries", "playedBy"]
+}

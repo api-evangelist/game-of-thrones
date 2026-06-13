@@ -1,0 +1,119 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "asoiaf": "https://anapioficeandfire.com/vocab#",
+    "api": "https://www.anapioficeandfire.com/api/",
+
+    "Book": "schema:Book",
+    "Character": "schema:Person",
+    "House": "schema:Organization",
+
+    "url": "@id",
+    "name": "schema:name",
+    "isbn": "schema:isbn",
+    "authors": "schema:author",
+    "numberOfPages": "schema:numberOfPages",
+    "publisher": "schema:publisher",
+    "country": "schema:locationCreated",
+    "mediaType": "schema:bookFormat",
+    "released": "schema:datePublished",
+    "characters": {
+      "@id": "asoiaf:characters",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "povCharacters": {
+      "@id": "asoiaf:povCharacters",
+      "@type": "@id",
+      "@container": "@set"
+    },
+
+    "gender": "schema:gender",
+    "culture": "asoiaf:culture",
+    "born": "schema:birthDate",
+    "died": "schema:deathDate",
+    "titles": {
+      "@id": "schema:jobTitle",
+      "@container": "@set"
+    },
+    "aliases": {
+      "@id": "schema:alternateName",
+      "@container": "@set"
+    },
+    "father": {
+      "@id": "schema:parent",
+      "@type": "@id"
+    },
+    "mother": {
+      "@id": "schema:parent",
+      "@type": "@id"
+    },
+    "spouse": {
+      "@id": "schema:spouse",
+      "@type": "@id"
+    },
+    "allegiances": {
+      "@id": "schema:memberOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "books": {
+      "@id": "asoiaf:books",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "povBooks": {
+      "@id": "asoiaf:povBooks",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "tvSeries": {
+      "@id": "asoiaf:tvSeries",
+      "@container": "@set"
+    },
+    "playedBy": {
+      "@id": "schema:actor",
+      "@container": "@set"
+    },
+
+    "region": "schema:containedInPlace",
+    "coatOfArms": "asoiaf:coatOfArms",
+    "words": "asoiaf:words",
+    "seats": {
+      "@id": "schema:location",
+      "@container": "@set"
+    },
+    "currentLord": {
+      "@id": "schema:member",
+      "@type": "@id"
+    },
+    "heir": {
+      "@id": "asoiaf:heir",
+      "@type": "@id"
+    },
+    "overlord": {
+      "@id": "schema:parentOrganization",
+      "@type": "@id"
+    },
+    "founded": "schema:foundingDate",
+    "founder": {
+      "@id": "schema:founder",
+      "@type": "@id"
+    },
+    "diedOut": "schema:dissolutionDate",
+    "ancestralWeapons": {
+      "@id": "asoiaf:ancestralWeapons",
+      "@container": "@set"
+    },
+    "cadetBranches": {
+      "@id": "schema:subOrganization",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "swornMembers": {
+      "@id": "schema:member",
+      "@type": "@id",
+      "@container": "@set"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/game-of-thrones/main/json-schema/house.json",
+  "title": "House",
+  "description": "A noble house from the A Song of Ice and Fire universe.",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "The canonical URL of this house resource."
+    },
+    "name": {
+      "type": "string",
+      "description": "The full name of the house.",
+      "examples": ["House Stark of Winterfell"]
+    },
+    "region": {
+      "type": "string",
+      "description": "The geographic region this house is based in.",
+      "examples": ["The North", "The Westerlands"]
+    },
+    "coatOfArms": {
+      "type": "string",
+      "description": "Heraldic description of the house's coat of arms."
+    },
+    "words": {
+      "type": "string",
+      "description": "The house words (motto). Empty if unknown.",
+      "examples": ["Winter Is Coming", "A Lannister Always Pays His Debts"]
+    },
+    "titles": {
+      "type": "array",
+      "description": "Titles held by the house.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "seats": {
+      "type": "array",
+      "description": "Known seats (castles/strongholds) of the house.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "currentLord": {
+      "type": "string",
+      "description": "URL of the current lord character resource, or empty string if unknown."
+    },
+    "heir": {
+      "type": "string",
+      "description": "URL of the current heir character resource, or empty string if unknown."
+    },
+    "overlord": {
+      "type": "string",
+      "description": "URL of the overlord house resource, or empty string if none."
+    },
+    "founded": {
+      "type": "string",
+      "description": "Text description of when the house was founded."
+    },
+    "founder": {
+      "type": "string",
+      "description": "URL of the founding character resource, or empty string if unknown."
+    },
+    "diedOut": {
+      "type": "string",
+      "description": "Text description of when the house died out. Empty if still active."
+    },
+    "ancestralWeapons": {
+      "type": "array",
+      "description": "Names of ancestral weapons belonging to this house.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cadetBranches": {
+      "type": "array",
+      "description": "URLs of cadet branch houses.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "swornMembers": {
+      "type": "array",
+      "description": "URLs of characters sworn to this house.",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  },
+  "required": ["url", "name", "region", "coatOfArms", "words", "titles", "seats", "currentLord", "heir", "overlord", "founded", "founder", "diedOut", "ancestralWeapons", "cadetBranches", "swornMembers"]
+}

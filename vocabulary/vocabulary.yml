@@ -1,0 +1,165 @@
+title: An API of Ice and Fire Vocabulary
+description: Domain vocabulary for the An API of Ice and Fire REST API covering key terms from the A Song of Ice and Fire book series and Game of Thrones TV series.
+version: 1.0.0
+terms:
+  - term: book
+    label: Book
+    definition: A published volume in the A Song of Ice and Fire novel series by George R.R. Martin.
+    properties:
+      - name: url
+        type: string (URI)
+        description: Canonical resource URL for this book.
+      - name: name
+        type: string
+        description: Full title of the book.
+      - name: isbn
+        type: string
+        description: International Standard Book Number (ISBN-13).
+      - name: authors
+        type: array of strings
+        description: One or more authors credited for the book.
+      - name: numberOfPages
+        type: integer
+        description: Total page count of the book edition.
+      - name: publisher
+        type: string
+        description: Publishing house that released the book.
+      - name: country
+        type: string
+        description: Country of origin for the first publication.
+      - name: mediaType
+        type: string
+        description: Physical media format (e.g., Hardcover, Paperback).
+      - name: released
+        type: string (ISO 8601 date-time)
+        description: Official release date of the book.
+      - name: characters
+        type: array of URIs
+        description: Character resources who appear in this book.
+      - name: povCharacters
+        type: array of URIs
+        description: Character resources with point-of-view chapters in this book.
+
+  - term: character
+    label: Character
+    definition: A named (or unnamed) person appearing in the A Song of Ice and Fire books or Game of Thrones TV series.
+    properties:
+      - name: url
+        type: string (URI)
+        description: Canonical resource URL for this character.
+      - name: name
+        type: string
+        description: The character's given name. May be empty for unnamed characters.
+      - name: gender
+        type: string
+        description: The character's gender (Male or Female).
+      - name: culture
+        type: string
+        description: The cultural group or ethnicity the character belongs to.
+      - name: born
+        type: string
+        description: Free-text description of birth location and time period.
+      - name: died
+        type: string
+        description: Free-text description of death location and time period. Empty if alive or unknown.
+      - name: titles
+        type: array of strings
+        description: Noble, military, or ceremonial titles held by the character.
+      - name: aliases
+        type: array of strings
+        description: Alternative names, nicknames, or epithets for the character.
+      - name: father
+        type: string (URI)
+        description: URL of the character resource who is this character's father.
+      - name: mother
+        type: string (URI)
+        description: URL of the character resource who is this character's mother.
+      - name: spouse
+        type: string (URI)
+        description: URL of the character resource who is this character's spouse.
+      - name: allegiances
+        type: array of URIs
+        description: House resources to which this character owes allegiance.
+      - name: books
+        type: array of URIs
+        description: Book resources in which this character appears (non-POV).
+      - name: povBooks
+        type: array of URIs
+        description: Book resources in which this character has point-of-view chapters.
+      - name: tvSeries
+        type: array of strings
+        description: Game of Thrones TV seasons the character appears in.
+      - name: playedBy
+        type: array of strings
+        description: Actors who portrayed this character in Game of Thrones.
+
+  - term: house
+    label: House
+    definition: A noble house or family from the A Song of Ice and Fire universe, typically bound by allegiance, heraldry, and geographic territory.
+    properties:
+      - name: url
+        type: string (URI)
+        description: Canonical resource URL for this house.
+      - name: name
+        type: string
+        description: Full formal name of the house (e.g., House Stark of Winterfell).
+      - name: region
+        type: string
+        description: Geographic region of Westeros or Essos where the house holds power.
+      - name: coatOfArms
+        type: string
+        description: Heraldic blazon describing the house's coat of arms.
+      - name: words
+        type: string
+        description: The house motto or words. Empty if no known words.
+      - name: titles
+        type: array of strings
+        description: Hereditary or earned titles associated with the house.
+      - name: seats
+        type: array of strings
+        description: Named castles, towers, or strongholds held by the house.
+      - name: currentLord
+        type: string (URI)
+        description: URL of the character resource who is the current head of the house.
+      - name: heir
+        type: string (URI)
+        description: URL of the character resource who is the current heir.
+      - name: overlord
+        type: string (URI)
+        description: URL of the house resource to which this house is sworn.
+      - name: founded
+        type: string
+        description: Free-text description of when the house was established.
+      - name: founder
+        type: string (URI)
+        description: URL of the character resource who founded the house.
+      - name: diedOut
+        type: string
+        description: Free-text description of when and why the house became extinct. Empty if active.
+      - name: ancestralWeapons
+        type: array of strings
+        description: Named ancestral weapons (e.g., Valyrian steel swords) belonging to the house.
+      - name: cadetBranches
+        type: array of URIs
+        description: House resources that are cadet (junior) branches of this house.
+      - name: swornMembers
+        type: array of URIs
+        description: Character resources sworn to serve this house.
+
+  - term: pagination
+    label: Pagination
+    definition: The mechanism by which large collections are divided into pages. The API uses Link header RFC 5988 for hypermedia pagination.
+    properties:
+      - name: page
+        type: integer
+        description: Current page number, 1-based.
+      - name: pageSize
+        type: integer
+        description: Maximum number of items returned per page (1-50, default 10).
+      - name: Link
+        type: HTTP header
+        description: RFC 5988 Link header providing URIs for first, prev, next, and last pages.
+
+  - term: hypermedia
+    label: Hypermedia
+    definition: The API uses hypermedia by returning fully-qualified URLs for all related resources, enabling clients to navigate the data graph without hardcoding URL patterns.
