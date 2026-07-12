@@ -53,6 +53,8 @@ apis:
       - FN: Joakim Skoog
         url: https://github.com/joakimskoog
 common:
+  - type: DomainSecurity
+    url: security/game-of-thrones-domain-security.yml
   - type: Website
     url: https://anapioficeandfire.com/
   - type: Documentation
