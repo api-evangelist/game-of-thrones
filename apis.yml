@@ -53,6 +53,8 @@ apis:
       - FN: Joakim Skoog
         url: https://github.com/joakimskoog
 common:
+  - type: AgenticAccess
+    url: agentic-access/game-of-thrones-agentic-access.yml
   - type: DomainSecurity
     url: security/game-of-thrones-domain-security.yml
   - type: Website
