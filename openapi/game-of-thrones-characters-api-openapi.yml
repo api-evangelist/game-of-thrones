@@ -1,0 +1,228 @@
+openapi: 3.0.3
+info:
+  title: An API of Ice and Fire books characters API
+  description: An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.
+  version: 1.0.0
+  contact:
+    name: Joakim Skoog
+    url: https://github.com/joakimskoog
+  license:
+    name: MIT
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/blob/master/LICENSE.md
+  termsOfService: https://anapioficeandfire.com/
+servers:
+- url: https://www.anapioficeandfire.com/api
+  description: Production server
+tags:
+- name: characters
+  description: Characters from A Song of Ice and Fire and Game of Thrones
+paths:
+  /characters:
+    get:
+      summary: List characters
+      description: Returns a paginated list of all characters. Supports filtering by name, gender, culture, born, died, isAlive, and tvSeries attributes.
+      operationId: listCharacters
+      tags:
+      - characters
+      parameters:
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/pageSize'
+      - name: name
+        in: query
+        description: Filter characters by name.
+        required: false
+        schema:
+          type: string
+        example: Jon Snow
+      - name: gender
+        in: query
+        description: Filter characters by gender.
+        required: false
+        schema:
+          type: string
+          enum:
+          - Male
+          - Female
+      - name: culture
+        in: query
+        description: Filter characters by culture.
+        required: false
+        schema:
+          type: string
+        example: Northmen
+      - name: born
+        in: query
+        description: Filter characters by birth description.
+        required: false
+        schema:
+          type: string
+      - name: died
+        in: query
+        description: Filter characters by death description.
+        required: false
+        schema:
+          type: string
+      - name: isAlive
+        in: query
+        description: Filter characters by alive status.
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: A paginated list of characters.
+          headers:
+            Link:
+              description: Hypermedia pagination links (RFC 5988).
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Character'
+  /characters/{id}:
+    get:
+      summary: Get a character
+      description: Returns a single character resource by its numeric ID.
+      operationId: getCharacter
+      tags:
+      - characters
+      parameters:
+      - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: A character resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Character'
+        '404':
+          description: Character not found.
+components:
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      description: Numeric identifier of the resource.
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
+    pageSize:
+      name: pageSize
+      in: query
+      required: false
+      description: Number of results per page (max 50).
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+        default: 10
+      example: 10
+    page:
+      name: page
+      in: query
+      required: false
+      description: Page number for pagination (1-based).
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      example: 1
+  schemas:
+    Character:
+      type: object
+      description: A named character from the A Song of Ice and Fire universe.
+      properties:
+        url:
+          type: string
+          format: uri
+          description: The canonical URL of this character resource.
+        name:
+          type: string
+          description: The character's name. May be empty for unnamed characters.
+          example: Jon Snow
+        gender:
+          type: string
+          description: The character's gender.
+          example: Male
+        culture:
+          type: string
+          description: The culture the character belongs to.
+          example: Northmen
+        born:
+          type: string
+          description: Text description of when and where the character was born.
+          example: In 283 AC
+        died:
+          type: string
+          description: Text description of when and where the character died. Empty if alive.
+          example: ''
+        titles:
+          type: array
+          description: Titles held by the character.
+          items:
+            type: string
+          example:
+          - Lord Commander of the Night's Watch
+        aliases:
+          type: array
+          description: Known aliases for the character.
+          items:
+            type: string
+          example:
+          - Lord Snow
+        father:
+          type: string
+          format: uri
+          description: URL of the character's father resource. Empty string if unknown.
+          example: ''
+        mother:
+          type: string
+          format: uri
+          description: URL of the character's mother resource. Empty string if unknown.
+          example: ''
+        spouse:
+          type: string
+          format: uri
+          description: URL of the character's spouse resource. Empty string if unknown.
+          example: ''
+        allegiances:
+          type: array
+          description: URLs of houses the character is sworn to.
+          items:
+            type: string
+            format: uri
+        books:
+          type: array
+          description: URLs of books the character appears in (non-POV).
+          items:
+            type: string
+            format: uri
+        povBooks:
+          type: array
+          description: URLs of books where this character has POV chapters.
+          items:
+            type: string
+            format: uri
+        tvSeries:
+          type: array
+          description: TV seasons the character appears in.
+          items:
+            type: string
+          example:
+          - Season 1
+          - Season 2
+        playedBy:
+          type: array
+          description: Actors who played this character in the TV series.
+          items:
+            type: string
+          example:
+          - Kit Harington
+externalDocs:
+  description: Official API Documentation (GitHub Wiki)
+  url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
