@@ -8,7 +8,19 @@ description: >-
   series covering all named characters, their allegiances, relationships,
   book appearances, TV season appearances, and details on every noble house
   and published book in the series.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: free
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Free · Open access
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/game-of-thrones.png
 url: https://raw.githubusercontent.com/api-evangelist/game-of-thrones/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -25,33 +37,48 @@ tags:
   - Open API
   - Free API
 apis:
-  - aid: game-of-thrones:an-api-of-ice-and-fire
-    name: An API of Ice and Fire
-    description: >-
-      Free REST API providing structured data from the A Song of Ice and Fire
-      book series and HBO's Game of Thrones. Endpoints cover Books, Characters,
-      and Houses with rich filtering and hypermedia pagination. No API key or
-      authentication required.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://anapioficeandfire.com/
-    baseURL: https://www.anapioficeandfire.com/api
-    tags:
-      - Game of Thrones
-      - ASOIAF
-      - Books
-      - Characters
-      - Houses
-      - Fantasy
-    properties:
-      - type: Documentation
-        url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
-      - type: OpenAPI
-        url: https://www.anapioficeandfire.com/api
-      - type: GitHubRepository
-        url: https://github.com/joakimskoog/AnApiOfIceAndFire
-    contact:
-      - FN: Joakim Skoog
-        url: https://github.com/joakimskoog
+- aid: game-of-thrones:game-of-thrones-books-api
+  name: An API of Ice and Fire books API
+  description: Books from the A Song of Ice and Fire series
+  humanURL: https://anapioficeandfire.com/
+  baseURL: https://www.anapioficeandfire.com/api
+  tags:
+  - books
+  properties:
+  - type: OpenAPI
+    url: openapi/game-of-thrones-books-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
+  - type: GitHubRepository
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire
+- aid: game-of-thrones:game-of-thrones-characters-api
+  name: An API of Ice and Fire characters API
+  description: Characters from A Song of Ice and Fire and Game of Thrones
+  humanURL: https://anapioficeandfire.com/
+  baseURL: https://www.anapioficeandfire.com/api
+  tags:
+  - characters
+  properties:
+  - type: OpenAPI
+    url: openapi/game-of-thrones-characters-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
+  - type: GitHubRepository
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire
+- aid: game-of-thrones:game-of-thrones-houses-api
+  name: An API of Ice and Fire houses API
+  description: Noble houses from the A Song of Ice and Fire universe
+  humanURL: https://anapioficeandfire.com/
+  baseURL: https://www.anapioficeandfire.com/api
+  tags:
+  - houses
+  properties:
+  - type: OpenAPI
+    url: openapi/game-of-thrones-houses-api-openapi.yml
+  - type: Documentation
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
+  - type: GitHubRepository
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire
 common:
   - type: AgenticAccess
     url: agentic-access/game-of-thrones-agentic-access.yml
