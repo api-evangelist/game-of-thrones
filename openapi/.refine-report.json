@@ -1,0 +1,18 @@
+{
+  "provider": "game-of-thrones",
+  "sources": [
+    "game-of-thrones-books-api-openapi.yml",
+    "game-of-thrones-characters-api-openapi.yml",
+    "game-of-thrones-houses-api-openapi.yml"
+  ],
+  "outputs": [
+    "game-of-thrones-books-api-openapi.yml",
+    "game-of-thrones-characters-api-openapi.yml",
+    "game-of-thrones-houses-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
