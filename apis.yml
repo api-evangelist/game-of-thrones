@@ -80,6 +80,10 @@ apis:
   - type: GitHubRepository
     url: https://github.com/joakimskoog/AnApiOfIceAndFire
 common:
+  - type: IssueTracker
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/issues
+  - type: ContributionGuide
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/blob/master/CONTRIBUTING.md
   - type: AgenticAccess
     url: agentic-access/game-of-thrones-agentic-access.yml
   - type: DomainSecurity
