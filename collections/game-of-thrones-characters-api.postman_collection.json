@@ -1,0 +1,316 @@
+{
+  "item": [
+    {
+      "id": "cf89e1bc-7ed1-4864-ba34-c85ae764db8b",
+      "name": "characters",
+      "description": {
+        "content": "Characters from A Song of Ice and Fire and Game of Thrones",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7608bdca-eb05-46f9-880a-e7eafb4b5508",
+          "name": "List characters",
+          "request": {
+            "name": "List characters",
+            "description": {
+              "content": "Returns a paginated list of all characters. Supports filtering by name, gender, culture, born, died, isAlive, and tvSeries attributes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "characters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination (1-based)."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "10",
+                  "description": "Number of results per page (max 50)."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter characters by name."
+                },
+                {
+                  "disabled": false,
+                  "key": "gender",
+                  "value": "<string>",
+                  "description": "Filter characters by gender."
+                },
+                {
+                  "disabled": false,
+                  "key": "culture",
+                  "value": "<string>",
+                  "description": "Filter characters by culture."
+                },
+                {
+                  "disabled": false,
+                  "key": "born",
+                  "value": "<string>",
+                  "description": "Filter characters by birth description."
+                },
+                {
+                  "disabled": false,
+                  "key": "died",
+                  "value": "<string>",
+                  "description": "Filter characters by death description."
+                },
+                {
+                  "disabled": false,
+                  "key": "isAlive",
+                  "value": "<boolean>",
+                  "description": "Filter characters by alive status."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96f929b4-c6bf-4cb5-8814-c54e1f13f9d3",
+              "name": "A paginated list of characters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "characters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "Jon Snow"
+                    },
+                    {
+                      "key": "gender",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "culture",
+                      "value": "Northmen"
+                    },
+                    {
+                      "key": "born",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "died",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isAlive",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Hypermedia pagination links (RFC 5988).",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"url\": \"http://FWznTEDGiVBwXSolpQgvfO.lnct5sxfGNPOCKwAA+,P8Vqg,2TGF+\",\n    \"name\": \"Jon Snow\",\n    \"gender\": \"Male\",\n    \"culture\": \"Northmen\",\n    \"born\": \"In 283 AC\",\n    \"died\": \"\",\n    \"titles\": [\n      \"Lord Commander of the Night's Watch\"\n    ],\n    \"aliases\": [\n      \"Lord Snow\"\n    ],\n    \"father\": \"https://pXeudOrKZDYOb.nakW20\",\n    \"mother\": \"http://ghXFgZeMOx.dwBfMTvQcaSnYE,oCxblpoucIpmn6GB8vDUGtY0UZIUB\",\n    \"spouse\": \"https://DIxviIJNGXlXdTfIMxdeLYMfGiEYbYqh.kyfoqMOzPkDswFUNw0jJXKrkdE8DSbl6iKR+6m-VGPcDxF23L-kYJM-G\",\n    \"allegiances\": [\n      \"https://HEQixXJxHoGScMhGsOd.uxf5Tw4wywaOXLeMLtZl.0YH3BnYtTPBjKRzAFcUkrIL0lbFVyDoWTg.I4Yp7rc8HmNA,x59\",\n      \"https://BDJvJRpiZfjvOzlymB.eeuy6P-8p,K\"\n    ],\n    \"books\": [\n      \"https://teg.rtncbRS2\",\n      \"http://AvDMzuSvuPtbBmWStKcRPrKDVa.ugF5FhcruKqW2wxRxY2SgYbY-UtOf\"\n    ],\n    \"povBooks\": [\n      \"https://ahlkMIrFOctqKOsTuCyfCmWFTNP.exvGQO6ZhUpah4vVjl3mkgC7,OTqA5FDC\",\n      \"http://KhIV.crlxwlDm5fGd6FEPIQzZ2wnWgqmABXRafapYZ\"\n    ],\n    \"tvSeries\": [\n      \"Season 1\",\n      \"Season 2\"\n    ],\n    \"playedBy\": [\n      \"Kit Harington\"\n    ]\n  },\n  {\n    \"url\": \"http://PgalfVOxVFdtGLZetZCaxzbkNnLI.nqetS7AvnzE4lOzJck09OW2utdtrAxeIORAJmRYB2+4B8\",\n    \"name\": \"Jon Snow\",\n    \"gender\": \"Male\",\n    \"culture\": \"Northmen\",\n    \"born\": \"In 283 AC\",\n    \"died\": \"\",\n    \"titles\": [\n      \"Lord Commander of the Night's Watch\"\n    ],\n    \"aliases\": [\n      \"Lord Snow\"\n    ],\n    \"father\": \"http://RbXwAPdgggAPHcLesflWrgONFWa.wlnnwWDq8nbvQI-E,vNej98UKHiFadC5pbxcF6gXm,9TEcxsfM5C7\",\n    \"mother\": \"http://YLNuJfd.mvpvlMutVkLFs44z2a4TZVPAFX,qQRvAnv\",\n    \"spouse\": \"http://njaPwEAPbFHikOn.zlteSD-OLa3UnlJnrPPYlibZDCPRyTxhh5BaoRGprM9GpLj\",\n    \"allegiances\": [\n      \"http://BEfFApYfWDsdAbFZdQyAtKoNLdSMW.hyprolFAb3IHRB8wHyW6sKozuplUFf\",\n      \"https://hTCdwojF.fpebnLJNVQ8.JjI9QEyeLH\"\n    ],\n    \"books\": [\n      \"https://nKxTGuKdVPeQgU.ghLxRrPasBD1n8FjGm-1HG3+8,N5he\",\n      \"https://IxeRFicRhOu.kqGwyaz,N6jbIyMKN6yEO4rzX+vDR+efNmde\"\n    ],\n    \"povBooks\": [\n      \"https://IbfUW.lovUoaSqz+X0DeIhQV6q2OUGTZght.m2LlLsfTUXMdPMDW5cim0hXeQDAq\",\n      \"http://ToN.vzvxpQZ.IxHB7GVOvv.pOqYt-pDaLmF7Mud21Mow5AZn.Kiv7FPblTpNWN+vAcWRCmBURw3rgaMaGMmDz,na\"\n    ],\n    \"tvSeries\": [\n      \"Season 1\",\n      \"Season 2\"\n    ],\n    \"playedBy\": [\n      \"Kit Harington\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75ee2920-2793-4fa4-a417-ea5dd1819805",
+          "name": "Get a character",
+          "request": {
+            "name": "Get a character",
+            "description": {
+              "content": "Returns a single character resource by its numeric ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "characters",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ed177762-68e7-4e73-95b2-05e96c625bc4",
+              "name": "A character resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "characters",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"https://aTtwzYObrOX.aizD.UEWUQQC4\",\n  \"name\": \"Jon Snow\",\n  \"gender\": \"Male\",\n  \"culture\": \"Northmen\",\n  \"born\": \"In 283 AC\",\n  \"died\": \"\",\n  \"titles\": [\n    \"Lord Commander of the Night's Watch\"\n  ],\n  \"aliases\": [\n    \"Lord Snow\"\n  ],\n  \"father\": \"http://fQAZrJTUg.pohpWqyT.FbW4rxU1rml2DyfwOgOvr,ftRjHgk,u+n,bdswJtnx2zXY+QHDO9-\",\n  \"mother\": \"https://qxnOftTSGYrYkKPAZiJwPIUPgDAS.ipheu,tGmxYe0U5xA3paFzV\",\n  \"spouse\": \"https://UJhQFgoGdvhwiltXAxjX.lkexH6W2\",\n  \"allegiances\": [\n    \"https://xKtbCIIRbgrTjKAA.hqmCdDyFTgIf-,SnJ9gfu5xJqOcL2+iLkh7lQM4Ns\",\n    \"https://VYFqcKxPhQQb.erhoo6.6qWXzlWCq,eJVw-QYaIzLDYq2+xK3B1ZY3rSTs2eeoKUGQn0i8gm\"\n  ],\n  \"books\": [\n    \"http://YAtVeiKVEEphrfQRLUVytyayDo.hhufF3xV-.li7bVowrVUB..0+wgJ\",\n    \"http://KUSOrYmUUyfThzaxCjTeXYdLg.brgdjBSdNGQ6dWqjmc7Qjro4\"\n  ],\n  \"povBooks\": [\n    \"https://zUKyjtMlhjK.kwxKq3NtnYHJVs6jF534QD7PWRwzM9\",\n    \"https://XAPqZImAZe.ivtrZfid7dmpAMvw1oIlvmpnKsnOhgesVJduq6hx2QPBpF4PKTER.dQO\"\n  ],\n  \"tvSeries\": [\n    \"Season 1\",\n    \"Season 2\"\n  ],\n  \"playedBy\": [\n    \"Kit Harington\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f8f9052-261d-4254-b984-4d4fc59bc5f3",
+              "name": "Character not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "characters",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric identifier of the resource."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.anapioficeandfire.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f871b964-40b0-44f4-80df-e84663e11b1b",
+    "name": "An API of Ice and Fire books characters API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.\n\nContact Support:\n Name: Joakim Skoog",
+      "type": "text/plain"
+    }
+  }
+}

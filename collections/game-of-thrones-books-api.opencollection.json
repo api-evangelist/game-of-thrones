@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "An API of Ice and Fire books API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "books",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "API root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.anapioficeandfire.com/api/"
+          },
+          "docs": "Returns the root resource listing all top-level endpoints."
+        },
+        {
+          "info": {
+            "name": "List books",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.anapioficeandfire.com/api/books",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number for pagination (1-based)."
+              },
+              {
+                "name": "pageSize",
+                "value": "10",
+                "type": "query",
+                "description": "Number of results per page (max 50)."
+              },
+              {
+                "name": "name",
+                "value": "A Game of Thrones",
+                "type": "query",
+                "description": "Filter books by name (case-sensitive, partial match)."
+              },
+              {
+                "name": "fromReleaseDate",
+                "value": "1996-01-01T00:00:00",
+                "type": "query",
+                "description": "Filter books released on or after this date (ISO 8601)."
+              },
+              {
+                "name": "toReleaseDate",
+                "value": "2020-12-31T00:00:00",
+                "type": "query",
+                "description": "Filter books released on or before this date (ISO 8601)."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of all books in the A Song of Ice and Fire series. Results support filtering by name, fromReleaseDate, and toReleaseDate."
+        },
+        {
+          "info": {
+            "name": "Get a book",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.anapioficeandfire.com/api/books/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "Numeric identifier of the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single book resource by its numeric ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

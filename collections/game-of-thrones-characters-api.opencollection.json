@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "An API of Ice and Fire books characters API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "characters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List characters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.anapioficeandfire.com/api/characters",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number for pagination (1-based)."
+              },
+              {
+                "name": "pageSize",
+                "value": "10",
+                "type": "query",
+                "description": "Number of results per page (max 50)."
+              },
+              {
+                "name": "name",
+                "value": "Jon Snow",
+                "type": "query",
+                "description": "Filter characters by name."
+              },
+              {
+                "name": "gender",
+                "value": "",
+                "type": "query",
+                "description": "Filter characters by gender."
+              },
+              {
+                "name": "culture",
+                "value": "Northmen",
+                "type": "query",
+                "description": "Filter characters by culture."
+              },
+              {
+                "name": "born",
+                "value": "",
+                "type": "query",
+                "description": "Filter characters by birth description."
+              },
+              {
+                "name": "died",
+                "value": "",
+                "type": "query",
+                "description": "Filter characters by death description."
+              },
+              {
+                "name": "isAlive",
+                "value": "",
+                "type": "query",
+                "description": "Filter characters by alive status."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of all characters. Supports filtering by name, gender, culture, born, died, isAlive, and tvSeries attributes."
+        },
+        {
+          "info": {
+            "name": "Get a character",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.anapioficeandfire.com/api/characters/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "Numeric identifier of the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single character resource by its numeric ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "An API of Ice and Fire books houses API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "houses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List houses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.anapioficeandfire.com/api/houses",
+            "params": [
+              {
+                "name": "page",
+                "value": "1",
+                "type": "query",
+                "description": "Page number for pagination (1-based)."
+              },
+              {
+                "name": "pageSize",
+                "value": "10",
+                "type": "query",
+                "description": "Number of results per page (max 50)."
+              },
+              {
+                "name": "name",
+                "value": "House Stark",
+                "type": "query",
+                "description": "Filter houses by name."
+              },
+              {
+                "name": "region",
+                "value": "The North",
+                "type": "query",
+                "description": "Filter houses by region."
+              },
+              {
+                "name": "words",
+                "value": "",
+                "type": "query",
+                "description": "Filter houses by their words/motto."
+              },
+              {
+                "name": "hasWords",
+                "value": "",
+                "type": "query",
+                "description": "Filter to houses that have words."
+              },
+              {
+                "name": "hasTitles",
+                "value": "",
+                "type": "query",
+                "description": "Filter to houses that have titles."
+              },
+              {
+                "name": "hasSeats",
+                "value": "",
+                "type": "query",
+                "description": "Filter to houses that have seats."
+              },
+              {
+                "name": "hasDiedOut",
+                "value": "",
+                "type": "query",
+                "description": "Filter to houses that have died out."
+              },
+              {
+                "name": "hasAncestralWeapons",
+                "value": "",
+                "type": "query",
+                "description": "Filter to houses that have ancestral weapons."
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of all noble houses. Supports filtering by name, region, words, hasWords, hasTitles, hasSeats, hasDiedOut, and hasAncestralWeapons."
+        },
+        {
+          "info": {
+            "name": "Get a house",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.anapioficeandfire.com/api/houses/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "1",
+                "type": "path",
+                "description": "Numeric identifier of the resource."
+              }
+            ]
+          },
+          "docs": "Returns a single house resource by its numeric ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

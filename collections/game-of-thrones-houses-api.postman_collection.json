@@ -1,0 +1,336 @@
+{
+  "item": [
+    {
+      "id": "d0dac3ea-3a5e-4482-9ecd-718362ad6d78",
+      "name": "houses",
+      "description": {
+        "content": "Noble houses from the A Song of Ice and Fire universe",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f38795b7-e6b2-4e14-a920-57b3926af70f",
+          "name": "List houses",
+          "request": {
+            "name": "List houses",
+            "description": {
+              "content": "Returns a paginated list of all noble houses. Supports filtering by name, region, words, hasWords, hasTitles, hasSeats, hasDiedOut, and hasAncestralWeapons.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "houses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination (1-based)."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "10",
+                  "description": "Number of results per page (max 50)."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter houses by name."
+                },
+                {
+                  "disabled": false,
+                  "key": "region",
+                  "value": "<string>",
+                  "description": "Filter houses by region."
+                },
+                {
+                  "disabled": false,
+                  "key": "words",
+                  "value": "<string>",
+                  "description": "Filter houses by their words/motto."
+                },
+                {
+                  "disabled": false,
+                  "key": "hasWords",
+                  "value": "<boolean>",
+                  "description": "Filter to houses that have words."
+                },
+                {
+                  "disabled": false,
+                  "key": "hasTitles",
+                  "value": "<boolean>",
+                  "description": "Filter to houses that have titles."
+                },
+                {
+                  "disabled": false,
+                  "key": "hasSeats",
+                  "value": "<boolean>",
+                  "description": "Filter to houses that have seats."
+                },
+                {
+                  "disabled": false,
+                  "key": "hasDiedOut",
+                  "value": "<boolean>",
+                  "description": "Filter to houses that have died out."
+                },
+                {
+                  "disabled": false,
+                  "key": "hasAncestralWeapons",
+                  "value": "<boolean>",
+                  "description": "Filter to houses that have ancestral weapons."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2e61a02-197f-4117-978c-a8f98a1415dd",
+              "name": "A paginated list of houses.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "houses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "House Stark"
+                    },
+                    {
+                      "key": "region",
+                      "value": "The North"
+                    },
+                    {
+                      "key": "words",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hasWords",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasTitles",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasSeats",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasDiedOut",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "hasAncestralWeapons",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Hypermedia pagination links (RFC 5988).",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"url\": \"http://vtwGuQNYvPqvvoEOpgAbj.jymtcmYwjXvK6CitU2JAPuvOaADzyXEdGVK9wxMIyeetluprRp\",\n    \"name\": \"House Stark of Winterfell\",\n    \"region\": \"The North\",\n    \"coatOfArms\": \"A grey direwolf on a white field\",\n    \"words\": \"Winter Is Coming\",\n    \"titles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"seats\": [\n      \"string\",\n      \"string\"\n    ],\n    \"currentLord\": \"https://GiIlSBaMRceEjYmBHFOvYtCI.eitV-\",\n    \"heir\": \"https://ayPUtyjkcNeAJucALPboYRgLZFizhXL.axulbH4kV.n13BViEewx292Oc5LxRIyyjgaWx\",\n    \"overlord\": \"http://NeyZUtKlMsFuRggvvjhmJEDrlqi.yqfsEXvpvWyZCx+38mY8BWp1TSPh1ZjdH-W.3jA2944LDo4g1E+PTHA9FWp,MfK5mnrQbptqC\",\n    \"founded\": \"string\",\n    \"founder\": \"https://e.hzdWXqVveM,VYIgnMDIRKiq4gHppPQlR\",\n    \"diedOut\": \"string\",\n    \"ancestralWeapons\": [\n      \"string\",\n      \"string\"\n    ],\n    \"cadetBranches\": [\n      \"http://BXKnXa.oiviTwqYwHL-eR30sskbHz.0IA\",\n      \"https://ztqHyBOgOghOEHYyuvIMlkbWD.qtcsuCVX\"\n    ],\n    \"swornMembers\": [\n      \"https://CLJ.spiD1r1,bF1pAA+S.,YRCMuhWlQs5buSJtgs2PsI2Bds.9B-\",\n      \"http://UvEVXel.grpstdg\"\n    ]\n  },\n  {\n    \"url\": \"https://sJ.cgkkSwIHGFtNG52\",\n    \"name\": \"House Stark of Winterfell\",\n    \"region\": \"The North\",\n    \"coatOfArms\": \"A grey direwolf on a white field\",\n    \"words\": \"Winter Is Coming\",\n    \"titles\": [\n      \"string\",\n      \"string\"\n    ],\n    \"seats\": [\n      \"string\",\n      \"string\"\n    ],\n    \"currentLord\": \"https://AfW.adsUIM.ek8yLc1Dj.Cc4fz0Gl2NPIc9dhxUu,\",\n    \"heir\": \"http://eeMHrUKaNsCogOJX.lqoT5NxsEIjHyohv\",\n    \"overlord\": \"https://YSztrqNTGmQNwWsvbr.cyjmUefWugI2fxqNKXWRZNROuQF3\",\n    \"founded\": \"string\",\n    \"founder\": \"https://hXUBhyzniem.xmqiMftj,BpDTxdsV+wM9q3wX4fq\",\n    \"diedOut\": \"string\",\n    \"ancestralWeapons\": [\n      \"string\",\n      \"string\"\n    ],\n    \"cadetBranches\": [\n      \"http://TjTZmcpdwIArywaifEKqDnazadSe.ixxUKk-cSM,uE-soEFw.hQp+bOG-VTpsZDjt,.8+xTcUGpmv0Pgb,Ir\",\n      \"https://yrWMrBEGdEwbsHFwcmyCKGyReWCjgsd.mbpVDKy9hgZgYWPMuIIQxbLQCvOzS6E+\"\n    ],\n    \"swornMembers\": [\n      \"https://gK.ynprSm1sJsuz4feFm,X0Y-9JgKINGCnRpOknwVt4hd\",\n      \"http://jCNNELyArb.dacbbQqsnmY,jQlI36remFkyTvEgttjX4.UM3wOrkQYf4ZTxKd8QonC4zwAPV\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e01a9a06-33c9-47a6-9b10-f326567ba989",
+          "name": "Get a house",
+          "request": {
+            "name": "Get a house",
+            "description": {
+              "content": "Returns a single house resource by its numeric ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "houses",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55ffbe47-a2fd-43e2-b127-bddaa612bc79",
+              "name": "A house resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "houses",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"http://wcdpjGZgLURvWekElHnPvq.itScaEG,5coI0ST.3A\",\n  \"name\": \"House Stark of Winterfell\",\n  \"region\": \"The North\",\n  \"coatOfArms\": \"A grey direwolf on a white field\",\n  \"words\": \"Winter Is Coming\",\n  \"titles\": [\n    \"string\",\n    \"string\"\n  ],\n  \"seats\": [\n    \"string\",\n    \"string\"\n  ],\n  \"currentLord\": \"http://UIOGDTagL.jpwlHuFrpcwuvpxTrUMUi7obplvxO.6uSPgOgskihphpMkqNLdFeGH79fj1931JTu\",\n  \"heir\": \"https://ReVKhyvuYGaJbosJVzOBXlbb.tityQ1RRDOtN.+1ZU.CM+nBL\",\n  \"overlord\": \"https://OfoQQNYCNY.luqS.4wz\",\n  \"founded\": \"string\",\n  \"founder\": \"http://PVNLMEyvuxKBTNUqvon.tsevr28N8UB8DIeyh18hUGaKXkFew9ZDt1hG828j0pKgjkCZOmPw-tAAcY.+5NFxTFj+XQizQHUYmG\",\n  \"diedOut\": \"string\",\n  \"ancestralWeapons\": [\n    \"string\",\n    \"string\"\n  ],\n  \"cadetBranches\": [\n    \"http://yWLXjsNcFWytbGUXEbGKHlgsLQr.snzy3ZWxOWSWySLiV93fvvkaDmLIe\",\n    \"http://aPzM.gmwR+J7rnj5ubQp2-aatev-C\"\n  ],\n  \"swornMembers\": [\n    \"http://T.jqqCfYZNxGxSoaPEKfQOLcmG\",\n    \"https://ZpRfSQDawVOnUkMFiSQyiZjPQVd.lhllgX9Ay-wN,bOvBz88ZJlFHt84dAzrdghF-SlGWkjBYxfyqXQV+Tlj8pg5CU52bR.rTyN9xjgMNYbVQb-\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67e9174f-186b-4e87-b9b0-d8b983f6fe83",
+              "name": "House not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "houses",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric identifier of the resource."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.anapioficeandfire.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "87e93daa-d19f-4539-9b9f-cc213613676a",
+    "name": "An API of Ice and Fire books houses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.\n\nContact Support:\n Name: Joakim Skoog",
+      "type": "text/plain"
+    }
+  }
+}

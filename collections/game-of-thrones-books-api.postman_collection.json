@@ -1,0 +1,356 @@
+{
+  "item": [
+    {
+      "id": "e2b9d7be-615e-4307-b01b-245022b94a98",
+      "name": "books",
+      "description": {
+        "content": "Books from the A Song of Ice and Fire series",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "75a548f8-752c-409f-bda2-4d07bdb5d401",
+          "name": "API root",
+          "request": {
+            "name": "API root",
+            "description": {
+              "content": "Returns the root resource listing all top-level endpoints.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30120218-b070-4917-b0ef-1c32fc2237ad",
+              "name": "Root resource with links to books, characters, and houses.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"books\": \"https://www.anapioficeandfire.com/api/books\",\n  \"characters\": \"https://www.anapioficeandfire.com/api/characters\",\n  \"houses\": \"https://www.anapioficeandfire.com/api/houses\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9bfe8b6-b151-4f8f-a025-90b0a946ac93",
+          "name": "List books",
+          "request": {
+            "name": "List books",
+            "description": {
+              "content": "Returns a paginated list of all books in the A Song of Ice and Fire series. Results support filtering by name, fromReleaseDate, and toReleaseDate.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "books"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination (1-based)."
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "10",
+                  "description": "Number of results per page (max 50)."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Filter books by name (case-sensitive, partial match)."
+                },
+                {
+                  "disabled": false,
+                  "key": "fromReleaseDate",
+                  "value": "<dateTime>",
+                  "description": "Filter books released on or after this date (ISO 8601)."
+                },
+                {
+                  "disabled": false,
+                  "key": "toReleaseDate",
+                  "value": "<dateTime>",
+                  "description": "Filter books released on or before this date (ISO 8601)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a12e230d-42d0-44e1-a8ea-c8b089caf580",
+              "name": "A paginated list of books.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "books"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "10"
+                    },
+                    {
+                      "key": "name",
+                      "value": "A Game of Thrones"
+                    },
+                    {
+                      "key": "fromReleaseDate",
+                      "value": "1996-01-01T00:00:00"
+                    },
+                    {
+                      "key": "toReleaseDate",
+                      "value": "2020-12-31T00:00:00"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "Hypermedia pagination links (first, prev, next, last) using RFC 5988 format.",
+                  "key": "Link",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"url\": \"http://k.srN-qOJTSnJNEB-2L+.+NfBIUxzm6aBBSbkp,7KfjaxXdr6MW\",\n    \"name\": \"A Game of Thrones\",\n    \"isbn\": \"978-0553103540\",\n    \"authors\": [\n      \"George R. R. Martin\"\n    ],\n    \"numberOfPages\": 694,\n    \"publisher\": \"Bantam Books\",\n    \"country\": \"United States\",\n    \"mediaType\": \"Hardcover\",\n    \"released\": \"1996-08-01T00:00:00\",\n    \"characters\": [\n      \"https://vPkVDTFUBQTxhZGIRynYyHwSwBhlyaG.mwezcaI.gHCHUlFzuk-tj\",\n      \"https://FqPwoITalIMb.ifqANATuvIoeJ3.QBa.DgrnTt-blrJrcXH3yICfCsy6+Z1sXGIBC0\"\n    ],\n    \"povCharacters\": [\n      \"http://YBCMCZFdcUNFWrxTflQgdYc.nuhyOGgyel76J\",\n      \"https://fcTwjiVFUlig.nqdoMbIShrsXpg72+FdlE4OaeNpIXix2EbaNxvRGKbuJ\"\n    ]\n  },\n  {\n    \"url\": \"https://dBVMNCTdMjVKbbHJCnabGrwvuCt.uyNRgUvCg4WSRY,ZI-ivd5UQwl+c\",\n    \"name\": \"A Game of Thrones\",\n    \"isbn\": \"978-0553103540\",\n    \"authors\": [\n      \"George R. R. Martin\"\n    ],\n    \"numberOfPages\": 694,\n    \"publisher\": \"Bantam Books\",\n    \"country\": \"United States\",\n    \"mediaType\": \"Hardcover\",\n    \"released\": \"1996-08-01T00:00:00\",\n    \"characters\": [\n      \"http://vKlEh.tnKavQ9mIVfEKvMzYKeIrDmR9nCH14t1AgCOP.9gXaq8AFe3u-eUCFjXA\",\n      \"http://jjScWZSXbVqhHDWPTFELbLKu.oiuhIxym9lyQTfndakEMSfEAS-enYpITs.yOMSZXIq0z3Zoab,1XyZgbbbOz\"\n    ],\n    \"povCharacters\": [\n      \"https://aFmNkueduB.ymjsuA8IO\",\n      \"https://wgFPIqlMRmvGae.gkqvOsfLq3jT7Uc0HBVS,cb1U23LrOCbKehiadBRyWp.5xBVBdIDTZWvAt5I\"\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78c01b3a-7ac6-4cb9-9cf7-157c08eea1ca",
+          "name": "Get a book",
+          "request": {
+            "name": "Get a book",
+            "description": {
+              "content": "Returns a single book resource by its numeric ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "books",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Numeric identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7bd3c0ec-37d9-4ea9-bcbd-64ea21b93e1a",
+              "name": "A book resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "books",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"url\": \"https://znaGORSiAJzefHOMCLpneQLGPyta.sxrWvDt01OES4un2LfFKl8R\",\n  \"name\": \"A Game of Thrones\",\n  \"isbn\": \"978-0553103540\",\n  \"authors\": [\n    \"George R. R. Martin\"\n  ],\n  \"numberOfPages\": 694,\n  \"publisher\": \"Bantam Books\",\n  \"country\": \"United States\",\n  \"mediaType\": \"Hardcover\",\n  \"released\": \"1996-08-01T00:00:00\",\n  \"characters\": [\n    \"http://vycNanlcvqYLDxFICYAtsduBhUWAzJ.equtRXEtQrfCQszk7V,Zvv7V3183zsLG+cvWIYmtCcB1oP0hevqMXRuLfsCkeDN\",\n    \"http://awkEoNPREdlvZAMrlIdNPzHVLvq.madacWF+eYn606rXZ\"\n  ],\n  \"povCharacters\": [\n    \"http://HLuhjum.fmoHlj4\",\n    \"https://GdD.kdj5T\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e95a06cf-f5d1-4b7c-8247-a2ac1fba7301",
+              "name": "Book not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "books",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Numeric identifier of the resource."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.anapioficeandfire.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c5f19cad-b8d9-4fee-8d85-c6a5176ccfa4",
+    "name": "An API of Ice and Fire books API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.\n\nContact Support:\n Name: Joakim Skoog",
+      "type": "text/plain"
+    }
+  }
+}
