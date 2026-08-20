@@ -34,6 +34,17 @@ tags:
   - Houses
   - Fantasy
   - Entertainment
+  - OpenAPI
+  - Free API
+tags_raw:
+  - Game of Thrones
+  - ASOIAF
+  - A Song of Ice and Fire
+  - Books
+  - Characters
+  - Houses
+  - Fantasy
+  - Entertainment
   - Open API
   - Free API
 apis:
@@ -43,6 +54,8 @@ apis:
   humanURL: https://anapioficeandfire.com/
   baseURL: https://www.anapioficeandfire.com/api
   tags:
+  - Books
+  tags_raw:
   - books
   properties:
   - type: OpenAPI
@@ -57,6 +70,8 @@ apis:
   humanURL: https://anapioficeandfire.com/
   baseURL: https://www.anapioficeandfire.com/api
   tags:
+  - Characters
+  tags_raw:
   - characters
   properties:
   - type: OpenAPI
@@ -71,6 +86,8 @@ apis:
   humanURL: https://anapioficeandfire.com/
   baseURL: https://www.anapioficeandfire.com/api
   tags:
+  - Houses
+  tags_raw:
   - houses
   properties:
   - type: OpenAPI
