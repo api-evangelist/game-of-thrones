@@ -67,7 +67,7 @@ apis:
   humanURL: https://anapioficeandfire.com/
   baseURL: https://www.anapioficeandfire.com/api
   tags:
-  - Books
+  - books
   tags_raw:
   - books
   properties:
@@ -83,7 +83,7 @@ apis:
   humanURL: https://anapioficeandfire.com/
   baseURL: https://www.anapioficeandfire.com/api
   tags:
-  - Characters
+  - characters
   tags_raw:
   - characters
   properties:
@@ -99,7 +99,7 @@ apis:
   humanURL: https://anapioficeandfire.com/
   baseURL: https://www.anapioficeandfire.com/api
   tags:
-  - Houses
+  - houses
   tags_raw:
   - houses
   properties:
