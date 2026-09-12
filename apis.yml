@@ -1,13 +1,6 @@
 aid: game-of-thrones
 name: An API of Ice and Fire
-description: >-
-  An API of Ice and Fire is a free, open REST API providing comprehensive
-  Game of Thrones and A Song of Ice and Fire data including books, characters,
-  and houses from George R.R. Martin's universe. No authentication is required.
-  The API offers structured, quantified data about the HBO series and book
-  series covering all named characters, their allegiances, relationships,
-  book appearances, TV season appearances, and details on every noble house
-  and published book in the series.
+description: An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.
 deliveryModel:
   model: unknown
   open_source: unknown
@@ -39,27 +32,27 @@ created: '2026-06-13'
 modified: '2026-06-13'
 specificationVersion: '0.23'
 tags:
-  - Game of Thrones
-  - ASOIAF
-  - A Song of Ice and Fire
-  - Books
-  - Characters
-  - Houses
-  - Fantasy
-  - Entertainment
-  - OpenAPI
-  - Free API
+- Game of Thrones
+- ASOIAF
+- A Song of Ice and Fire
+- Books
+- Characters
+- Houses
+- Fantasy
+- Entertainment
+- OpenAPI
+- Free API
 tags_raw:
-  - Game of Thrones
-  - ASOIAF
-  - A Song of Ice and Fire
-  - Books
-  - Characters
-  - Houses
-  - Fantasy
-  - Entertainment
-  - Open API
-  - Free API
+- Game of Thrones
+- ASOIAF
+- A Song of Ice and Fire
+- Books
+- Characters
+- Houses
+- Fantasy
+- Entertainment
+- Open API
+- Free API
 apis:
 - aid: game-of-thrones:game-of-thrones-books-api
   name: An API of Ice and Fire books API
@@ -109,27 +102,81 @@ apis:
     url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
   - type: GitHubRepository
     url: https://github.com/joakimskoog/AnApiOfIceAndFire
-common:
-  - type: IssueTracker
-    url: https://github.com/joakimskoog/AnApiOfIceAndFire/issues
-  - type: ContributionGuide
-    url: https://github.com/joakimskoog/AnApiOfIceAndFire/blob/master/CONTRIBUTING.md
-  - type: AgenticAccess
-    url: agentic-access/game-of-thrones-agentic-access.yml
-  - type: DomainSecurity
-    url: security/game-of-thrones-domain-security.yml
-  - type: Website
-    url: https://anapioficeandfire.com/
+- aid: game-of-thrones:an-api-of-ice-and-fire-root-api
+  name: An API of Ice And Fire Root API
+  description: API entry-point listing the top-level resource URLs.
+  humanURL: https://anapioficeandfire.com/
+  baseURL: https://anapioficeandfire.com/api
+  tags:
+  - Root
+  properties:
+  - type: OpenAPI
+    url: openapi/an-api-of-ice-and-fire-root-api-openapi.yml
+  - type: Documentation
+    url: https://anapioficeandfire.com/Documentation
   - type: Documentation
     url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
-  - type: GitHubOrg
-    url: https://github.com/joakimskoog
-  - type: Plans
-    url: plans/game-of-thrones-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/game-of-thrones-rate-limits.yml
-  - type: FinOps
-    url: finops/game-of-thrones-finops.yml
+  - type: SourceCode
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire
+  - type: SignupURL
+    url: https://anapioficeandfire.com/
+  - type: SDKs
+    url: https://github.com/joakimskoog/anapioficeandfire-python
+  - type: SDKs
+    url: https://github.com/sotojuan/maester
+  - type: SDKs
+    url: https://github.com/afram/iceandfire-graphql
+  - type: SDKs
+    url: https://github.com/kberger/anapioficeandfire-haskell
+  - type: SDKs
+    url: https://github.com/arbazsiddiqui/A-song-of-ice-and-fire-API
+  - type: SDKs
+    url: https://github.com/alexwebb2/node-api-iceandfire
+  - type: SDKs
+    url: https://github.com/MangoTheCat/GoTr
+  - type: SDKs
+    url: https://github.com/jzntam/game_of_thrones_api
+  - type: SDKs
+    url: https://github.com/Yag000/asoiaf-rs
+  - type: SDKs
+    url: https://github.com/murphb52/IceAndFireKit
+  - type: SDKs
+    url: https://github.com/ujell/IceAndFireLoader
+  - type: SDKs
+    url: https://github.com/fitomad/WesterosKit
+  - type: SDKs
+    url: https://github.com/anujpradhaan/anapioficeandfire-go
+  - type: SDKs
+    url: https://github.com/zytron3/AnAPIofIceAndFireCpp
+  - type: SDKs
+    url: https://github.com/voxgig-sdk/anapioficeandfire-sdk
+  - type: Tools
+    url: https://github.com/pipeworx-io/mcp-anapioficeandfire
+  - type: Tools
+    url: https://github.com/stephdietzel/ConnectorOfIceAndFire
+  - type: GraphQL
+    url: graphql/an-api-of-ice-and-fire-graphql.md
+common:
+- type: IssueTracker
+  url: https://github.com/joakimskoog/AnApiOfIceAndFire/issues
+- type: ContributionGuide
+  url: https://github.com/joakimskoog/AnApiOfIceAndFire/blob/master/CONTRIBUTING.md
+- type: AgenticAccess
+  url: agentic-access/game-of-thrones-agentic-access.yml
+- type: DomainSecurity
+  url: security/game-of-thrones-domain-security.yml
+- type: Website
+  url: https://anapioficeandfire.com/
+- type: Documentation
+  url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
+- type: GitHubOrg
+  url: https://github.com/joakimskoog
+- type: Plans
+  url: plans/game-of-thrones-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/game-of-thrones-rate-limits.yml
+- type: FinOps
+  url: finops/game-of-thrones-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
