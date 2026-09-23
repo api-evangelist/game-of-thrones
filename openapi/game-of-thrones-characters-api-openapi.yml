@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: An API of Ice and Fire books characters API
+  title: An API of Ice and Fire Characters API
   description: An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.
   version: 1.0.0
   contact:
@@ -14,7 +14,7 @@ servers:
 - url: https://www.anapioficeandfire.com/api
   description: Production server
 tags:
-- name: characters
+- name: Characters
   description: Characters from A Song of Ice and Fire and Game of Thrones
 paths:
   /characters:
@@ -23,7 +23,7 @@ paths:
       description: Returns a paginated list of all characters. Supports filtering by name, gender, culture, born, died, isAlive, and tvSeries attributes.
       operationId: listCharacters
       tags:
-      - characters
+      - Characters
       parameters:
       - $ref: '#/components/parameters/page'
       - $ref: '#/components/parameters/pageSize'
@@ -88,7 +88,7 @@ paths:
       description: Returns a single character resource by its numeric ID.
       operationId: getCharacter
       tags:
-      - characters
+      - Characters
       parameters:
       - $ref: '#/components/parameters/id'
       responses:
@@ -101,37 +101,6 @@ paths:
         '404':
           description: Character not found.
 components:
-  parameters:
-    id:
-      name: id
-      in: path
-      required: true
-      description: Numeric identifier of the resource.
-      schema:
-        type: integer
-        minimum: 1
-      example: 1
-    pageSize:
-      name: pageSize
-      in: query
-      required: false
-      description: Number of results per page (max 50).
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 50
-        default: 10
-      example: 10
-    page:
-      name: page
-      in: query
-      required: false
-      description: Page number for pagination (1-based).
-      schema:
-        type: integer
-        minimum: 1
-        default: 1
-      example: 1
   schemas:
     Character:
       type: object
@@ -223,6 +192,37 @@ components:
             type: string
           example:
           - Kit Harington
+  parameters:
+    page:
+      name: page
+      in: query
+      required: false
+      description: Page number for pagination (1-based).
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+      example: 1
+    id:
+      name: id
+      in: path
+      required: true
+      description: Numeric identifier of the resource.
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
+    pageSize:
+      name: pageSize
+      in: query
+      required: false
+      description: Number of results per page (max 50).
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 50
+        default: 10
+      example: 10
 externalDocs:
   description: Official API Documentation (GitHub Wiki)
   url: https://github.com/joakimskoog/AnApiOfIceAndFire/wiki

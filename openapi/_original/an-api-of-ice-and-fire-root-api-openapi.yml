@@ -1,0 +1,89 @@
+# x-archived-from: an-api-of-ice-and-fire-root-api-openapi.yml
+# x-archived-on: 2026-09-16
+openapi: 3.2.0
+info:
+  title: An API of Ice And Fire Books Root API
+  version: '1.0'
+  description: An API of Ice And Fire is the world's greatest source for quantified and structured data from the universe of A Song of Ice and Fire (and the HBO series Game of Thrones). Three hypermedia resources — Books, Characters, and Houses — are exposed read-only over HTTPS, free of authentication, with RFC 5988 Link-header pagination, conditional caching (ETag / Last-Modified), and version selection via custom media types.
+  termsOfService: https://github.com/joakimskoog/AnApiOfIceAndFire/blob/master/LICENSE.md
+  contact:
+    name: Joakim Skoog (maintainer)
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire
+  license:
+    name: BSD 3-Clause-like
+    url: https://github.com/joakimskoog/AnApiOfIceAndFire/blob/master/LICENSE.md
+  x-generated-from: documentation
+  x-last-validated: '2026-05-30'
+servers:
+- url: https://anapioficeandfire.com/api
+  description: Production
+tags:
+- name: Root
+  description: API entry-point listing the top-level resource URLs.
+paths:
+  /:
+    get:
+      operationId: getRoot
+      summary: An API of Ice And Fire Get API Root
+      description: Returns the API entry point with absolute URLs to the three top-level collections (books, characters, houses). Useful for hypermedia discovery — clients can crawl the API from this endpoint alone.
+      tags:
+      - Root
+      responses:
+        '200':
+          description: API root document.
+          headers:
+            ETag:
+              $ref: '#/components/headers/ETag'
+            Last-Modified:
+              $ref: '#/components/headers/LastModified'
+            Cache-Control:
+              $ref: '#/components/headers/CacheControl'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Root'
+              examples:
+                GetRoot200Example:
+                  summary: Default getRoot 200 response
+                  x-microcks-default: true
+                  value:
+                    books: https://anapioficeandfire.com/api/books
+                    characters: https://anapioficeandfire.com/api/characters
+                    houses: https://anapioficeandfire.com/api/houses
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Root:
+      type: object
+      description: API root document listing top-level collection URLs.
+      properties:
+        books:
+          type: string
+          format: uri
+          description: URL of the books collection.
+          example: https://anapioficeandfire.com/api/books
+        characters:
+          type: string
+          format: uri
+          description: URL of the characters collection.
+          example: https://anapioficeandfire.com/api/characters
+        houses:
+          type: string
+          format: uri
+          description: URL of the houses collection.
+          example: https://anapioficeandfire.com/api/houses
+  headers:
+    LastModified:
+      description: Last-modified timestamp for conditional GETs via If-Modified-Since.
+      schema:
+        type: string
+    CacheControl:
+      description: Cache-Control directives, typically including max-age.
+      schema:
+        type: string
+    ETag:
+      description: Strong entity tag for conditional GETs via If-None-Match.
+      schema:
+        type: string
