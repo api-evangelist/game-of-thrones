@@ -185,6 +185,15 @@ components:
             type: string
             format: uri
   parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      description: Numeric identifier of the resource.
+      schema:
+        type: integer
+        minimum: 1
+      example: 1
     page:
       name: page
       in: query
@@ -194,15 +203,6 @@ components:
         type: integer
         minimum: 1
         default: 1
-      example: 1
-    id:
-      name: id
-      in: path
-      required: true
-      description: Numeric identifier of the resource.
-      schema:
-        type: integer
-        minimum: 1
       example: 1
     pageSize:
       name: pageSize

@@ -3,6 +3,10 @@ name: An API of Ice and Fire
 description: An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.
 deliveryModel:
   model: unknown
+  license_evidence:
+    repo: joakimskoog/anapioficeandfire
+    spdx: NOASSERTION
+    stars: 378
   open_source: unknown
   commercial: true
   callable_host: true
@@ -12,7 +16,7 @@ deliveryModel:
   - openapi
   - pricing
   - repository-unlicensed
-  generated: '2026-08-28'
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: free
