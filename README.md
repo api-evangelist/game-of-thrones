@@ -64,57 +64,152 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire (ASOIAF) data including books, characters, and houses from George R.R. Martin's universe.
+An API of Ice and Fire is a free, open REST API providing comprehensive Game of Thrones and A Song of Ice and Fire data including books, characters, and houses from George R.R. Martin's universe. No authentication is required. The API offers structured, quantified data about the HBO series and book series covering all named characters, their allegiances, relationships, book appearances, TV season appearances, and details on every noble house and published book in the series.
 
-- **Website:** https://anapioficeandfire.com/
-- **Documentation:** https://github.com/joakimskoog/AnApiOfIceAndFire/wiki
-- **GitHub:** https://github.com/joakimskoog/AnApiOfIceAndFire
-- **Base URL:** https://www.anapioficeandfire.com/api
+**Areas:** Game of Thrones · ASOIAF · A Song of Ice and Fire · Books · Characters · Houses · Fantasy · Entertainment · OpenAPI · Free API
 
-## Overview
+## An API of Ice and Fire on APIs.io
 
-The API provides structured, quantified data covering:
+Everything profiled for An API of Ice and Fire is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/game-of-thrones/](https://apis.io/providers/game-of-thrones/)** — or go straight to one of the APIs or properties below.
 
-- **Books** — All published books in the A Song of Ice and Fire series with ISBNs, authors, page counts, publishers, release dates, and character lists
-- **Characters** — Named characters with aliases, titles, cultural backgrounds, relationships (father, mother, spouse), allegiances, book appearances, POV chapters, TV season appearances, and actors
-- **Houses** — Noble houses with regions, coats of arms, words (mottos), current lords, heirs, overlords, founders, ancestral weapons, cadet branches, and sworn members
+### APIs (3)
 
-## Authentication
+- [An API of Ice and Fire Books API](https://apis.io/apis/game-of-thrones/game-of-thrones-books-api/) — Books from the A Song of Ice and Fire series
+- [An API of Ice and Fire Characters API](https://apis.io/apis/game-of-thrones/game-of-thrones-characters-api/) — Characters from A Song of Ice and Fire and Game of Thrones
+- [An API of Ice and Fire Houses API](https://apis.io/apis/game-of-thrones/game-of-thrones-houses-api/) — Noble houses from the A Song of Ice and Fire universe
 
-No authentication is required. The API is completely open and free to use.
+### Published properties
 
-## Rate Limits
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- 20,000 requests per day per IP address
-- Exceeding the limit returns a 403 Forbidden response for the remainder of the 24-hour period
-- Caching is recommended to reduce unnecessary requests
+#### GraphQL (1)
 
-## Pagination
+GraphQL schemas.
 
-All list endpoints support pagination via query parameters:
+- [Moved to /providers/game-of-thrones/](https://apis.io/graphqls/game-of-thrones/an-api-of-ice-and-fire-graphql/)
 
-- `?page` — Page number (1-based, default: 1)
-- `?pageSize` — Results per page (default: 10, maximum: 50)
+#### Agentic access (1)
 
-Navigation links are provided in the `Link` response header (`next`, `prev`, `first`, `last`).
+Which operations an agent can call, which act, and which need a human in the loop.
 
-## Endpoints
+- [Game Of Thrones Agentic Access](https://apis.io/agentic-access/game-of-thrones/game-of-thrones-agentic-access/)
 
-| Resource | URL |
-|----------|-----|
-| Root | `GET /api` |
-| Books | `GET /api/books` |
-| Book by ID | `GET /api/books/{id}` |
-| Characters | `GET /api/characters` |
-| Character by ID | `GET /api/characters/{id}` |
-| Houses | `GET /api/houses` |
-| House by ID | `GET /api/houses/{id}` |
+#### JSON Schema (3)
 
-## APIs.json
+The data models the API reads and writes.
 
-This repository contains an APIs.json 0.19 profile for this API maintained by [API Evangelist](https://apievangelist.com).
+- [Book](https://apis.io/schemas/game-of-thrones/book/)
+- [Character](https://apis.io/schemas/game-of-thrones/character/)
+- [House](https://apis.io/schemas/game-of-thrones/house/)
 
-- [apis.yml](apis.yml) — Main API index
-- [plans/game-of-thrones-plans-pricing.yml](plans/game-of-thrones-plans-pricing.yml) — Plans and pricing
-- [rate-limits/game-of-thrones-rate-limits.yml](rate-limits/game-of-thrones-rate-limits.yml) — Rate limit details
-- [finops/game-of-thrones-finops.yml](finops/game-of-thrones-finops.yml) — Financial operations guidance
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [context Context](https://apis.io/jsonld/game-of-thrones/context/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Book](https://apis.io/examples/game-of-thrones/book/)
+- [Character](https://apis.io/examples/game-of-thrones/character/)
+- [House](https://apis.io/examples/game-of-thrones/house/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [An API of Ice and Fire books API](https://apis.io/collections/game-of-thrones/open-game-of-thrones-books-api/)
+- [An API of Ice and Fire books characters API](https://apis.io/collections/game-of-thrones/open-game-of-thrones-characters-api/)
+- [An API of Ice and Fire books houses API](https://apis.io/collections/game-of-thrones/open-game-of-thrones-houses-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [An API of Ice and Fire — jsonschema rules](https://apis.io/rules/game-of-thrones/game-of-thrones-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Game Of Thrones Domain Security](https://apis.io/security/game-of-thrones/game-of-thrones-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Game Of Thrones Plans Pricing](https://apis.io/plans/game-of-thrones/game-of-thrones-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Game Of Thrones Rate Limits](https://apis.io/rate-limits/game-of-thrones/game-of-thrones-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Game Of Thrones Finops](https://apis.io/finops/game-of-thrones/game-of-thrones-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://anapioficeandfire.com/)
+- [Documentation](https://github.com/joakimskoog/AnApiOfIceAndFire/wiki)
+
+## API Evangelist rating
+
+**Kin Score 25.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 57.0 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 5.3 |
+
+**Agent readiness 23.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/game-of-thrones/](https://apis.io/providers/game-of-thrones/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for An API of Ice and Fire: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/game-of-thrones/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
